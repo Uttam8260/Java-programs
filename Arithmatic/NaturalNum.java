@@ -1,15 +1,14 @@
+import java.util.*;
 
-class NaturalNum {
-
+public class NaturalNum {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number");
-        int i = 1;
-        int n = 100;
+        int n = sc.nextInt();
         int sum = 0;
-        while (i <= n) {
-            sum = sum + i;
-            i++;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
         }
-        System.out.println(sum);
+        System.out.println("Sum = " + sum);
     }
 }
