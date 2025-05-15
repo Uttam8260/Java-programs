@@ -1,0 +1,118 @@
+
+                                                        JDBC
+                                                    ...............
+
+
+->API: Api stands for Application programming interface.It is an intermediate between user and database.
+
+->JDBC:jdbc stands for java database connectivity.It is an API.It is purely built in java because it is present in JDK.
+       Jdbc is an api which is the collection of key classes and interface.
+       jdbc driver have 2 package i.e. java.sql and javax.sql package.
+       jdbc uses differeent jdbc driver but differeent databases.
+
+->key classess and interface :-
+................................
+key classes and interface which is present in JDBC.
+1)Driver manager class
+2)Connection interface
+3)Statement interface
+4)Prepared Statement interface
+5)Callable satatement interface
+6)ResultSet interface
+7)ResultSetMetadata interface
+
+JDBC Driver :-
+...............
+->Jdbc driver is a software component which helps to connect java application into databases.
+->jdbc require jdbc driver to manage the connection.
+->jdbc driver provided by database vendor.
+
+->Types of JDBC Driver :-
+............................
+1)JDBC-ODBC Driver :- It is built in C programming language so it is not platform independent means platform dependent and it is only supported by windows operating system.
+2)Native-API Driver :-It is also built in both C and JAVA programming language which is not completely butil in java programming language so it also platform dependent.
+3)Network-Protocol Driver :-It is built in java programming language which is platform independent.we can run this driver in any operating system.
+4)Thin Driver :-It is built in java programing language but still it is  platform independent but database dependent.
+
+Q1)What is database vendor?
+ANS:- A database vendor is an entity or a group which offers database to it's user on license.
+     Ex: Oracle SQL,Mysql,MsSql
+
+Steps in JDBC:-
+..................
+1)Load and register the driver:-The process of loading jdbc driver into java application is called load the register.We register the driver with the help of class.forName(String fqc).The driver class objects is loaded into jdbc memory implicitly and provides implimentationto driver interface.Thus remaining interface of jdbc will get implimentation implicitly from jdbc driver.
+    Ex: class.forName("com.mysql.cj.jdbc.Driver")
+
+2)Establish the connection:-To establish the connection in between java applicatuon and the database server we use <connection> as datatype because <connection> is an interface.For that we will use DriverManager class in java.sql.Drivermanager.
+    Ex:- public static Connection getConnection(String url,String username,String password){
+        return Connection implimenting class();
+    }
+    ->Driver manager have no relation between connction interface.It is just a helper method to does connction.
+    ->getConnection(url,uname,password)
+    ->wrong uname,Wrong password,wrong url then access will be denied.
+    ->Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306","root","root");
+
+3)Create Statement:-We have create Statementby using 3 statement which is having IS-A relationship. i.e.statement,prepared statement,Callable statement
+                ->To create statement definitely we create a connection object there only.We can call non-static method of connection.
+
+4)Execute the Statement:-All are parameterised mdethod.to execute the statement we have 3 method i.e. 
+    i)execute:- return type is boolean
+    ii)executeUpdate:-return type is int
+    iii)executeQuery:- rerurn type is ResultSet.
+
+5)Process the ResultSet:-To fetch data from database is known as ResultSet which is used to store data from from database.
+        ResultSet is an interface which is used to store and fetch the data from the database.
+        Retriving the data in the database is called ResultSet.
+        ResultSet rs=st.executeQuery("select * from student where id=1");
+        rs.next():-It move the cursor to the next row.If no data present then it returns false otherwise it return true is data is present.Initially cursor is present in top of the row when we call next methos then first it will check wheather data is present or not in next row if present it returns true otherwise returns false.
+        In ResultSet their are many methods are their i.e. next(),getInt(int i),getString(int i),getLong(int i),getByte()....
+
+6)Close the connection:- We can close this connection by using close() method.
+
+->Jar file is a compresed collection classes.
+->Jdbc driver don't have any interface.It have only implimenting classes.
+->Dependancy is a link for jar files.
+
+Q2)Difference between statement and preparedStatement interface?
+ANS:- statement:-
+    ................
+1)Programmer need not not pass any query at the time of the object creation of statement.
+2)Statement is not associated with any query.
+3)We use statement to execute different types of query at a sametime.
+4)In statement each query is compliled
+5)Statement is not so efficient as preparedStatement.
+
+preparedStatement:-
+......................
+1)Programmer need to pass query at the time of object creation of preparedStatement.
+2)preparedStatement is always associated with any query.
+3)preparedStatement is used to exceute same query mulitiple times.
+4)In preparedStatement the complilation is doing only once.
+5)preparedStatement is more efficient than statement interafce.
+
+Q3)What is palceholder?
+ANS:-A placeholder is a query is represented by '?' . placeholderare used to store the value dynamicallyin a query.
+    Ex:-preparedStatement ps=con.PrepareStatement("insert into student(id,name,age) values(/,'?',?)");
+Q4)What is Batch?
+Ans:-A batch is a container which is used to store multiple sql statement.and addBatch() is a methid to add some sql statement inside the batch container.
+
+Q5)What is Batch Processing?
+Ans:-Batch processing is a process of storing and sending multiple sql statement as an one request to the database and after execution submiting them as one response to the user.
+
+->Advantages of batch Processing:-
+1)Avoiding network traffic in database server.
+2)Improve the efficiency of the application.
+3)BatchProcessing is used when we need to exceute huge number of queries at the same times.
+
+->Stored Procuduer:-
+.....................
+->The process of storing set of sql statement in the database is called stored procedure.
+
+->Callable Statement:-
+.........................
+->Callable statement is a subinterface of prepared statement.callable statement is used to call stored procedure and function.
+->We create callable statement by using prepareCall(String call) method of connection interface.
+    Ex:-CallableStatement cs=con.prepareCall("{call procedure name}");
+
+
+                                         ..........THE END.............
