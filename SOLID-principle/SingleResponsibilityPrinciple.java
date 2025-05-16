@@ -1,3 +1,4 @@
+//Single Responsibility Principle:-Any one reason to change this class not more than that.
 public class SingleResponsibilityPrinciple{
 
     static class Invoice {

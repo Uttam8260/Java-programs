@@ -1,4 +1,4 @@
-//OpenClosedPrinciple example
+//OpenClosedPrinciple example:-Open for extension and closed for modification
 public class OCP{
 
     // PaymentStrategy Interface
