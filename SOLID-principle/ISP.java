@@ -21,6 +21,7 @@ public class ISP {
 
     // Class that only implements what it needs
     static class OldPrinter implements Printer {
+        @Override
         public void print() {
             System.out.println("OldPrinter: Printing only...");
         }
@@ -28,18 +29,22 @@ public class ISP {
 
     // Class that implements all functionalities
     static class ModernPrinter implements Printer, Scanner, Fax, Copier {
+        @Override
         public void print() {
             System.out.println("ModernPrinter: Printing...");
         }
 
+        @Override
         public void scan() {
             System.out.println("ModernPrinter: Scanning...");
         }
 
+        @Override
         public void fax() {
             System.out.println("ModernPrinter: Faxing...");
         }
 
+        @Override
         public void copy() {
             System.out.println("ModernPrinter: Copying...");
         }
