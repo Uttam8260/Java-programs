@@ -1,8 +1,5 @@
-
                                                         JDBC
                                                     ...............
-
-
 ->API: Api stands for Application programming interface.It is an intermediate between user and database.
 
 ->JDBC:jdbc stands for java database connectivity.It is an API.It is purely built in java because it is present in JDK.
@@ -113,6 +110,6 @@ Ans:-Batch processing is a process of storing and sending multiple sql statement
 ->Callable statement is a subinterface of prepared statement.callable statement is used to call stored procedure and function.
 ->We create callable statement by using prepareCall(String call) method of connection interface.
     Ex:-CallableStatement cs=con.prepareCall("{call procedure name}");
-
+   
 
                                          ..........THE END.............
