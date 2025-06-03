@@ -1,0 +1,132 @@
+                                                       -: EXCEPTION :-
+                                                      ....................
+->Exception is an interuption which will occur during programme excution.
+->When exception occur remaining lines of code get terminated which we called abnormal termination.
+->To handle exception we use 5 keywords i.e throw,throws,try,catch,finally.
+->in java exception are occure at RUNTIME.
+->When we handled exception then program folw will not terminate.
+->In java exception are classes.
+->Throwable is the root classes for the exception which is present in java.lang package.
+->It is 2 types i.e. Error(Stack overflow,Virtual memory) and Exception(Checked,Unchecked).
+->Checked Exception(CompileTime) i.e. ClassNotFound Exception,FileNotFound Exception,I/O Exception,Interupted Exception.
+->UnChecked Exception(RunTime) i.e. Arithmatic exception,NullPointer Exception,StringIndexOutofbound Exception,ArrayIndexOutofBound Exception,NumberFormat Exception.
+
+EXAMPLE:
+..............................................................
+public class Demo{
+    public  static void main(String[] args){
+        System.out.println("main start");
+        try{
+            int a=10,b=0;
+            int c=a/b;
+
+            System.out.println(c);
+        }
+        Catch(Exception e){
+            e.printStackTrace();
+            e.getMessage();
+            System.out.println("Exception handled");
+        }
+    }
+}
+................................................................
+1)try:-
+........
+->try is a keyword used in exception handling.
+->Inside try block we can write risky line of code which are responsible for for the exception.
+->We can not write try block alone , it is always associted with try with catch keyword or finally block.
+->For one try block we can write multiple catch block.
+
+Example:
+.................................................................................
+public class Demo{
+    public  static void main(String[] args){
+        System.out.println("main start");
+        try{
+            int a=10,b=0;
+            int c=a/b;
+
+            System.out.println(c);
+        }
+        Catch(Exception e){
+            e.printStackTrace();
+            e.getMessage();
+            System.out.println("Exception handled");
+        }
+        Catch(ArithmaticException ae){
+            ae.printStackTrace();
+            ae.getMessage();
+            System.out.println("ArithmaticException handled");
+        }
+        Catch(NullPointerException ne){
+            ne.printStackTrace();
+            ne.getMessage();
+            System.out.println("Nullpointer exception handled");
+        }
+    }
+}
+....................................................................................
+
+2)Catch():-
+.............
+->Catch is a keyword ehich is used for catch or handled exception.
+->We should not catch block alone.
+->Catch block is always associted with try block.
+->We should not write any line between try and catch block.
+->When we are writting multiple catch block we have to follow the order of sub type to super type.
+->catch block is execute when exception will occur in try block.
+->Catch block is provide alternate solution for thr exception.
+
+3)finally| :-
+..................
+->Finally is a block & keyword used in excdption handling.
+->Finally block is  always executed wheather exception will occure or not.
+->finally block is executed before executing the return statement.
+->finally block we are using for costly resourses like database closing connection file closing.
+-If their is try,catch and finally then after executing try catch finally block is executed.
+
+->Default Exception:
+......................
+->The exception which are not handled by user it is handled by jvm by terminating the current execution.
+->Default exception is are part of jvm which is going to handle an exception by terminating the current excution.
+
+4)throw:-
+...........
+->throw is a keyword is used to throw an exception.
+->By using throw we can throw both checked and unChecked exception.
+->By using throw keyword we can throw only one keyword at a time.
+->throw keyword we are using inside a method block.
+5)throws:-
+...........
+->throws is a keyword is used to declare an exception.
+->By using throws we can throws both checked and Unchecked exception.
+->By using throw keyword we can throws multiple exception at a single time.
+->throws keyword we are used along with the method signature.
+
+->Propagation:-
+................
+->Passing an exception to its caller method is known as propagation.
+->We can propagate the exception by using throws keyword.
+->Exception propagation is implicit for Unchecked exception.
+->Exception propagation is explicit for checked exception.
+->By using throws keyword we can declare multiple exception. like FileNotFound exception,ClassNotFound exception etc..
+
+Difference between checked and Unchecked exception.
+......................................................
+1)Checked Exception:-
+.....................
+->The exception which are handled by at the time of compile time those are called checked exception.
+->It is also called as compiler known exception.
+->Handling is mandatory for checked exception.
+->Propagation is implicit for checked exception.
+->Ex:-ClassNotFound exception,FileNotFound exception,I/O exception,Interupted exception.
+
+2)unChecked Exception:-
+.........................
+->The exception which are handled by at the time of runtime those are called unCheckedchecked exception.
+->It is also called as compiler unknown exception.
+->Handling is not mandatory for unCheckedchecked exception.
+->Propagation is explicit for unCheckedchecked exception.
+->Ex:-Arithmatic exception,NullPointer exception,NumberFormat exception,ArrayIndexOutofBound exception etc...
+
+
