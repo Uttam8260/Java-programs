@@ -71,7 +71,7 @@ Steps in JDBC:-
 ->Dependancy is a link for jar files.
 
 Q2)Difference between statement and preparedStatement interface?
-ANS:- statement:-
+ANS:- statement:-/
     ................
 1)Programmer need not not pass any query at the time of the object creation of statement.
 2)Statement is not associated with any query.
