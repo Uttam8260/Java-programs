@@ -1,18 +1,16 @@
 public class AdapterDesignPattern{
 
-// Target Interface
  static interface Charger {
     int get5Volt();
 }
 
-// Adaptee - an incompatible class
 static class ElectricSocket {
     public int get220Volt() {
         return 220;
     }
 }
 
-// Adapter - converts 220V to 5V
+
 static class SocketAdapter implements Charger {
     private final ElectricSocket socket;
 
