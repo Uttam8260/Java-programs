@@ -1,0 +1,123 @@
+->In SQL their are 5 command  i.e. DDL,DML,DCL,TCL,DQL
+1)DQL:- select
+2)DDL:-create,alter,drop,truncate,rename
+3)DML:-insert,update,delete
+4)DCL:-Grant,revoke
+5)Tcl:-commit,rollback,savepoint
+
+1)DQL Syntax:-
+select column-name
+from tablename  
+where condition;
+
+2)DDL Syntax:-
+create table tablename(columnname datatype(size)constraints);
+
+Alter(add,drop,rename,modify)
+alter table tablename
+add coulumnname datatype(size) constraints;
+
+alter table tablename
+drop column columnname;
+
+alter table tablename
+rename column columnname to new columnname;
+
+alter table tablename
+modify columnname datatype(size) constraints;
+
+Drop table tablename;
+show recyclebin;//for see recycle data
+flashback table tablename to before drop;//To restore the table from recyclebin
+purge table tablename;//this is delete the table name from recyclebin
+purge recyclebin;//this will delete all the recyclebin
+
+Truncate table tablename;
+
+Rename oldtable to newtable;
+
+3)DML Syntax:-
+
+insert into tablename(col1,col2,col3...)
+values(val1,val2,val3...);
+
+Insert into tablename
+values(columnname datatype(size) constraints);
+
+update tablename
+set coulumnname=values
+where condition;
+
+delete from tablename
+where condition;
+
+4)TCL Syntax:-
+
+commit;
+
+rollback;
+
+rollback to savepoint;
+
+savepoint to savepoint-name;
+
+5)DCL Syntax:-
+Grant,revoke
+
+..........................................
+JOins:-It is 3types i.e.
+1)Cross join
+2)Inner join again  2 types self join and equi join
+3)Outter join again 2types left join and right join
+
+1)Cross Join Syntax:-
+......................
+select t1.columnname,t2.columnname
+from table t1,table t2
+where condition;
+
+or   select t1.columnname,t2.columnname
+    from table t1 join table t2
+    where condition;
+
+2)Inner Join Syntax:-
+.......................
+select t1.columnname,t2.columnname
+from table t1 Inner join table t2
+on t1.columnname=t2.columnname
+where condition;
+
+or  select t1.columnname,t2.columnname
+    from table t1 join table t2
+    on t1.columnname=t2.columnname
+    where condition;
+
+Equi join syntax:-
+.....................
+select t1.columnname,t2.columnname
+from table t1,table t2
+where t1.columnname=t2.columnname;
+
+Self join Syntax:-
+.........................
+select t1.colname,t2.columnname
+from table t1,table t1
+where t1.columnname=t2.columnname;
+
+3)Left join syntax:-
+....................
+select tab1.colname,tab2.columnname
+from table tab1 left join table tab2
+on tab1.columnname=tab2.columnname;
+
+Right join syntax:-
+....................
+select tab1.columnname,tab2.columnname
+from table tab1 right join table tab2'
+on tab1.columnname=tab2.columnname;
+
+Full outter join syntax:-
+..............................
+select tab1.columnname,tab2.columnname
+from table tab1 full outter join table tab2
+on tab1.columnname=tab2.columnname;
