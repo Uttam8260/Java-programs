@@ -16,13 +16,13 @@ public class TemplateDesignPattern {
         protected abstract void validatePaymentDetails();
         protected abstract void makePayment();
 
-        // Common step
         protected void sendConfirmation() {
             System.out.println("Confirmation: Payment successful.\n");
         }
     }
 
-    // Concrete class for PayPal
+    // Concrete class for PayPaljava TemplateDesignPattern
+    
     static class PayPalPayment extends PaymentProcessor {
         @Override
         protected void authenticateUser() {
