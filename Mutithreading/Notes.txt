@@ -1,3 +1,183 @@
                                                     MULTITHREADING
                                                 ......................
-->
+1) What is Multithreading?
+.................................
+->Multithreading is the process of executing multiple threads simultaneously.
+->It is a type of thread-based multitasking.
+->Java supports multithreading to execute multiple tasks concurrently.
+->It helps in better CPU utilization and improved application performance.
+->By using mutithreading we can achieve multitasking.
+
+🔹Types of Multitasking:-
+.................................
+(1) Process-Based Multitasking:-
+.................................
+->Executing multiple processes at the same time.
+->It managed at the Operating System level.
+->Each process has its own memory, so it's a heavyweight process.
+
+(2) Thread-Based Multitasking:-
+..................................
+->Executing multiple threads within the same process.
+->It is lightweight compared to process-based multitasking.
+->It can be managed at the program level.
+->Threads share the same memory.
+
+🔹What is a Thread?
+...........................
+->A Thread is a lightweight sub-process.
+->It is the smallest unit of a program that can execute independently.
+->In Java, it's present in the java.lang package.
+->Threads share common memory but execute independently.
+
+🔹Ways to Create a Thread in Java
+.......................................
+
+➤ (1) By Extending the Thread Class:-
+...........................................
+Example:-
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+➤ (2) By Implementing the Runnable Interface:-
+......................................................
+Example:-
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+🔹 Default Threads Created in Java
+.......................................
+->When executing a Java program JVM will create 3 thread i.e.
+(1)Garbage Collector Thread
+(2)Thread Scheduler Thread
+(3)MAin Thread.
+
+🔹Thread Lifecycle (States of a Thread):-
+..............................................
+(i)New(Born stage) – Thread object is created.
+(ii)Runnable – Ready to run, waiting for CPU time.
+(iii)Running – Actively executing.
+(iv)Blocked/Waiting – Waiting for resources.
+(v)Terminated (Dead) – Execution is complete.
+
+🔹Key Methods in Thread class:-
+...................................
+(1)start():-Starts a new thread execution.
+(2)run():-Defines the thread task and behaviour.
+(3)sleep(long millisecond):-Pauses thread for specified milliseconds.
+(4)Join():-	Waits for another thread to finish or allows another thread and wait for completion of another thread.
+(5)Interrupt():-Interrupts a sleeping/waiting thread
+(6)yield():-Pauses current thread to allow other threads of equal priority to run.
+(need to edit );;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+🔹 8. Thread Cloning
+Java supports object cloning using the clone() method.
+
+➤ Cloning Types:
+Shallow Cloning – Only copies primitive values and object references (not actual objects).
+
+Deep Cloning – Copies everything, including actual object content.
+
+➤ Example:
+java
+Copy
+Edit
+class Dog implements Cloneable {
+    int i;
+    Cat c;
+
+    Dog(int i, Cat c) {
+        this.i = i;
+        this.c = c;
+    }
+
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); // Shallow
+    }
+}
+🔹 9. Synchronization
+Used to avoid race conditions in multithreading.
+
+Ensures thread safety by locking resources.
+
+Achieved using synchronized keyword.
+
+➤ Lock Types:
+Object-level lock – For instance methods.
+
+Class-level lock – For static methods.
+
+java
+Copy
+Edit
+public synchronized void print() { ... } // Object-level
+public static synchronized void printAll() { ... } // Class-level
+🔹 10. Deadlock
+Occurs when two threads wait for each other to release resources.
+
+It leads to infinite waiting and program freeze.
+
+Java has no default mechanism to resolve deadlock.
+
+🔹 11. Thread Priority
+Java thread priority ranges from 1 to 10.
+
+MIN_PRIORITY = 1
+
+NORM_PRIORITY = 5 (Default)
+
+MAX_PRIORITY = 10
+
+Threads with higher priority may get preference in execution.
+
+java
+Copy
+Edit
+thread.setPriority(Thread.MAX_PRIORITY);
+🔹 12. Daemon vs Non-Daemon Thread
+➤ Daemon Thread:
+Runs in background (e.g., garbage collector).
+
+Terminates when all non-daemon threads finish.
+
+java
+Copy
+Edit
+thread.setDaemon(true);
+➤ Non-Daemon Thread:
+User-defined threads.
+
+Main application logic runs here.
+
+🔹 13. yield() Method
+Tells thread scheduler to pause current thread to allow others with equal priority to run.
+
+Does not guarantee the current thread will pause.
+
+🔹 14. join() Method
+Used to wait for another thread to complete before proceeding.
+
+java
+Copy
+Edit
+thread.join(); // waits for thread to finish
+🔹 15. sleep() vs wait() vs join()
+Method	Type	Belongs To	Releases Lock?	Use
+sleep()	Static	Thread class	No	Pause execution for given time
+wait()	Instance	Object class	Yes	Wait for notification
+join()	Instance	Thread class	No	Wait for another thread to complete
+
+🔹 16. Thread Scheduler
+Part of JVM.
+
+Decides which thread to run based on priority.
+
+Implements preemptive or time-slicing scheduling.
+
+🔹 17. Thread Stack Memory
+Each thread has its own stack memory.
+
+Hence, thread execution is independent.
