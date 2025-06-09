@@ -2,9 +2,9 @@
                                                       ....................
 ->Exception is an interuption which will occur during programme excution.
 ->When exception occur remaining lines of code get terminated which we called abnormal termination.
-->To handle exception we use 5 keywords i.e throw,throws,try,catch,finally.
+->To handle exception we use 5 keywords i.e try,catch,throw,throws,finally.
 ->in java exception are occure at RUNTIME.
-->When we handled exception then program folw will not terminate.
+->When we handled exception then program flow will not terminate.
 ->In java exception are classes.
 ->Throwable is the root classes for the exception which is present in java.lang package.
 ->It is 2 types i.e. Error(Stack overflow,Virtual memory) and Exception(Checked,Unchecked).
@@ -69,15 +69,15 @@ public class Demo{
 
 2)Catch():-
 .............
-->Catch is a keyword ehich is used for catch or handled exception.
-->We should not catch block alone.
+->Catch is a keyword which is used for catch or handled the exception.
+->We should not write catch block alone.
 ->Catch block is always associted with try block.
 ->We should not write any line between try and catch block.
 ->When we are writting multiple catch block we have to follow the order of sub type to super type.
 ->catch block is execute when exception will occur in try block.
-->Catch block is provide alternate solution for thr exception.
+->Catch block is provide alternate solution for the exception.
 
-3)finally| :-
+3)finally:-
 ..................
 ->Finally is a block & keyword used in excdption handling.
 ->Finally block is  always executed wheather exception will occure or not.
