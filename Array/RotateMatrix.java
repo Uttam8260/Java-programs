@@ -22,7 +22,7 @@ public class RotateMatrix {
                 System.out.print(matrix[row][col]);
                 // if (row != m - 1) System.out.print(" ");
             }
-            System.out.println();
+            System.out.println(); 
         }
     }
 }
