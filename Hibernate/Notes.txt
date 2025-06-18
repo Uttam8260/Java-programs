@@ -15,7 +15,7 @@ Advantages of Hibernate:-
 ->Simplifies complexity in developing java application.
 
 Q)What is an entity class?
-->An entity class represents a table in relational database and each entity class bject correspondense to row in the table.Simply we can create class nameas table name in database we are using entity annotation.
+->An entity class represents a table in relational database and each entity class object correspondense to row in the table.Simply we can create class nameas table name in database we are using entity annotation.
 
 Q)What is Entity Manager Factory EMF?
 ->Entity Manager Factory is an interface to interact with ta Persistance unit to establish connection with the application database.
@@ -24,4 +24,57 @@ Q)What is Entity Manager Factory EMF?
  syntax:- EntityManagerFactory emf=Persistance.createEntityManagerFactory("string");
 
  Q)What is Entity Manager?
- ->
+ ->Entity manager is an interface which is used to allow application to manage and search for the entities in the relational database.
+ ->We can save,update and delete the data in the database.
+ i)persist:-makes an instance managed and persistant.
+ ii)merge:-merge the state of the given entity into the current persistance.
+ iii)remove:-remove the entity instance.
+ iv)find:-find by primary key.
+
+ syntax:=EntityManager em=emf.createEntityManager();
+
+ ->We can create multiple entity manager but one entity manager factory.
+ Q)What is entity transaction?
+ ->To begin and commit the transaction we use entity transaction.
+ i)begin():-is used to start the transaction.
+ ii)commit():-is used to commit the transaction.
+
+ syntax:-EntityTransaction et=em.getTransaction();
+
+ Mapping in Hibernate:
+ .....................
+ ->The mapping between entity class and the relationship between tables is the soul of ORM.
+ ->Hibernate mapping are the key features of Hibernate.They establish the relationship between two database tables.
+ ->You can establish either unidirectional and bidirectional.
+ 1)one-to-one ex:-one person have one aadhar card.
+ 2)one-to-many ex:-one person have multiple account number.
+ 3)many-to-one ex:-multiple people choose one company.
+ 4)many-to-many ex:-multiple student choose multiple course.
+
+ Cascadding in Hibernate:-
+ ..............................
+ ->Cascadding is a features in hibernate which is used to manage the state of the mapped entity whenever the state of it's relationship owner affected.
+ ->When the relationship owner is saved or deleted then the mapped entity associated it should be saved or deleted automatically.
+ ->When we perform some action on targeted entity the same action will be applied to the associated entity.
+
+ Types of Cascadding:-
+ ..........................
+ ->All
+ ->persist
+ ->merge
+ ->Remove
+
+ Caching in hibernate:-
+ .........................
+ ->To fetch same data multiple times we use chaching concepts.
+ ->Hibernate caching improves the performance of the application by saving the object in the catche is useful when we have to fetch same data multiple times.
+ ->Their are mainly 2 Types of caching in hibernate.
+ 1)First level caching
+ 2)Second level caching
+
+ ->Three stpes to enable When we use second level cache i.e.
+ 1)Add hibernate cachable dependancy.
+ 2)Add @cachable annotation in entity class.
+ 3)Enable second level cache by configuring in persistance file.
+ 
+
