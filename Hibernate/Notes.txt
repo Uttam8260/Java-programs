@@ -1,0 +1,27 @@
+                                                            Hibernate
+                                                     ......................
+Q)What is ORM Framework?
+->ORM stand's for Object Relational Mapping.It is a middleware tool that lies between the application and database.It wraps the implimentation.
+ Java Object --->ORM  --------> Database(Column)
+
+->Hibernate is an ORM-tool and java Frameworkused to interact with the database.It is an open sourse ,lightweight,ORM tool.
+->Hibernate implements the specification of JPA(Java Persistance Architecture).
+
+Advantages of Hibernate:-
+...........................
+->Open sourse and lightweight.
+->Fast performance.
+->Automatic table creation.
+->Simplifies complexity in developing java application.
+
+Q)What is an entity class?
+->An entity class represents a table in relational database and each entity class bject correspondense to row in the table.Simply we can create class nameas table name in database we are using entity annotation.
+
+Q)What is Entity Manager Factory EMF?
+->Entity Manager Factory is an interface to interact with ta Persistance unit to establish connection with the application database.
+->The entity manager factory interface presents in java.persistance package is used to provide an object of entity manager.
+->Persistance is a class which is used to provide object of EntityManagerFactory interface.
+ syntax:- EntityManagerFactory emf=Persistance.createEntityManagerFactory("string");
+
+ Q)What is Entity Manager?
+ ->
