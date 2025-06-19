@@ -4,7 +4,6 @@
 //space complexity:O(1)
 
 class BubbleSort {
-
     public static void main(String[] args) {
         int[] a = {13, 41, 2, 123, 567, 324, 542, 67, 88};
         sort(a);
