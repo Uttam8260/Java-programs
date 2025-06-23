@@ -19,7 +19,7 @@ public class CommandDesignPattern {
             System.out.println("Fan STOPPED");
         }
     }
-    
+
     // Command interface
     interface Command {
         void execute();
