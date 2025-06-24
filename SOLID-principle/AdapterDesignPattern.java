@@ -10,7 +10,6 @@ static class ElectricSocket {
     }
 }
 
-
 static class SocketAdapter implements Charger {
     private final ElectricSocket socket;
 
