@@ -86,7 +86,7 @@ public class TinderDesign {
         public void sendMessage(User sender, String msg) {
             for (User user : participants) {
                 if (!user.getName().equals(sender.getName())) {
-                    System.out.println("Msg" + sender.getName() + " to " + user.getName() + ": " + msg);
+                    System.out.println("Msg  " + sender.getName() + " to " + user.getName() + ": " + msg);
                 }
             }
         }
