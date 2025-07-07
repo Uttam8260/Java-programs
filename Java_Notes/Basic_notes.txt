@@ -533,7 +533,7 @@ Downcasting:-
 ................
 ->Downcasting means creating an instance of super type and assign to sub type.
 ->It is also used to generalized the code.
-->Without upcasting if we do downcasting then we get Class Cast Exception.
+->Without upcasting if we do downcasting then we get ClassCast Exception.
 
 
 
