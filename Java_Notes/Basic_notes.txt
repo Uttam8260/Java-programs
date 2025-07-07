@@ -456,7 +456,7 @@ class C extends P {
     }
 }
 
-->modifier :-
+->modifier:-
 ...............
 ->modifier defines the visibility of classes,members,variables inside the class, within the class and inside the package.
 ->Modifiers are 2 types i.e. (1)Access Modifier
@@ -514,14 +514,26 @@ iv)synchronized :-
     System.out.println(a);
  }
 
- ->Typecasting :-
+ ->Typecasting:-
  ...................
- ->Converting one type to another type is known as Typecasting.
+ ->It is a process of converting one datatype to another datatype is known as Typecasting.
  ->It is 2 types.(1)Primitive Typecasting :-It is againg 2 type i.e. Widening and Narrowing
                  (2)Non-Primitive Typecasting :-It is again 2 type i.e. Upcasting and Downcasting
 
 
+->Widening means converting smaller datatype to larger datatype.
+->Narrowing means converting larger datatype to smaller datatype.
 
+Upcasting:-
+..............
+->Upcasting means creating an instance of subtype and assign to super type.
+->It is used to generalized the code.
+
+Downcasting:-
+................
+->Downcasting means creating an instance of super type and assign to sub type.
+->It is also used to generalized the code.
+->Without upcasting if we do downcasting then we get Class Cast Exception.
 
 
 
