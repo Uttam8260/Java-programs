@@ -1,0 +1,691 @@
+
+                                            ..................JAVA......................
+
+->Java is a high level programming language which was developed by James Ghoshling in the year of 1995.
+->To write Java program we need text editor and to execute the java program we need JDK(Java development Kit).
+
+->If we go to our Java architecture :-
+             A.java(source code).......(Compiler)..........>A.class(Byte code)......(JRE)........>Processer(0's and 1's)
+
+Exampple:-
+............
+class A{
+    public static void main(String[] args){
+        System.out.println("Hello World");
+    }
+}
+
+-->To compile we write in terminal [Javac A.java]
+-->To execute we write in terminal [Java A]
+
+Method:-
+........
+->Method is a set of statement which is used to perform some task.
+->To execute method statement method call is compulsory.
+->Main method called by JRE.
+ex:-
+    class B{
+        public static void main(String[] args){
+            System.out.println("main Start");
+            m1();
+            System.out.println("main end");
+        }
+        public static void m1(){
+            System.out.println("m1() start");
+            System.out.println("m1() end");
+        }
+    }
+
+
+Identifier: -
+..............
+->The name which are given by the programmer while coding those name are called Identifier.    
+ex:- class name,method name,variable name
+
+Rules for Identifier:-
+..........................
+->Identifier should not be start with digit.
+->Identifier should not be a keyword.
+->Identifier should not contain any special keyword except underscore(_) and doller($) symbol.
+ex:-num_1,num_$
+
+  
+->variable:-
+............
+->Variable is a container which is used to store a single value.
+
+syntax:
+..........
+datatype var-name; // var declaration
+var-name = value; // var initialization
+
+datatype var-name = value; // var declaration initialization
+
+ex:-
+int a;
+a = 10;
+
+->variable Types:-
+..............
+It is 3 types:
+
+(1)Local variable
+(2)Static variable
+(3)Non-static variable
+
+->Variable can be re-declared but it can’t be re-initialized.
+
+(1)Local variable:-
+.................
+->The variable which are created inside the class and inside the method, those variable are called as local variable.
+
+ex:
+class B {
+    psvm(String[] args) {
+        int i = 10; // local variable
+        sop("i value is" + i);
+    }
+}
+NOTE:-Local variable we can’t use without initialization but we can use static / nonstatic variable.
+(2)Static variable:-
+....................
+->The variable which are created inside the class or outside the main method with using static keyword. It’s known as static variable.
+
+ex:
+class B {
+    static int a;
+    psvm(String[] args) {
+        int a = 10;
+        sop(a); //10
+        sop(B.a); //0
+    }
+}
+Note:
+If there are local and static variables having same name then to refer static variable we must use classname.variablename
+
+(3)Non-static / Instance variable :-
+......................................
+->The variable which are created inside the class or outside the main method without using static keyword, it’s known as non-static variable.
+
+ex:
+class A {
+    int i; // non-static variable
+    psvm(String[] args) {
+        A a = new A();
+        a.i = 10;
+        sop(a.i); //10
+    }
+}
+
+->Difference between Static vs Non-static variable :-
+.........................................................
+->variable declared with static keyword known as static variable.	variable declared without using static keyword known as non-static variable.
+->To refer static var, object creation is not required	to refer non-static var, object creation is mandatory.
+->Java allocate only 1 copy of memory for static variable	java allocate n no of copy memory for non-static variable.
+->static variable can be referred either by using classname or object reference	non-static variable can be referred when we create the object reference.
+
+->Datatype:-
+.............
+->Datatype are used to represent the type of value which is store into variable.
+There are 2 type of datatype:
+
+(1)Primitive Datatype
+(2)Nonprimitive Datatype
+
+    Datatype
+   /        \
+Primitive   Nonprimitive
+
+1)Primitive Datatype:-Which is predefined.
+....................
+->byte(1)
+->short(2)
+->int(4)
+->long(8)
+->float(4)
+->double(8)
+->boolean(1)
+->char(2)
+
+2)Nonprimitive Datatype:-Which is user defined.
+........................
+->array
+->string
+->class
+->object
+->interface
+
+NOTE:{1 byte = 8 bit}
+
+
+->Operator :-
+..................
+->Operator is used to operate something in variable value.
+
+Types of operator:-
+........................
+i)Arithmetic operator (+,-,*,/, %)
+ii)Relational operator (==, !=, >, >=, <, <=)
+iii)Logical operator (||, &&, !)
+iv)Assignment operator (=, +=, -= etc)
+v)Unary operator (+, -, ++, --)
+vi)Bitwise operator (&, |, ^, <<, >>)
+vii)Ternary operator (condition ? value1 : value2)
+viii)Instanceof operator (used for object type checking)
+
+-> Concatenation:-
+....................
+->Means joining or combining two or more operand. To perform concatenation we use + operator.
+
+ex:-
+number + number = addition
+
+string + number = concatenation
+
+string + string = concatenation
+
+-> Ternary Operator:-
+.........................
+ex:
+
+int x = 10;
+int y = 20;
+int z = (x > y) ? x : y;
+sop(z);
+
+-. Bitwise shift operator:-
+................................
+1)>> signed Right shift
+
+2)<< signed left shift
+
+3)>>> unsigned right shift
+
+ex1:-
+......
+int a = 40;
+int b = a >> 2;
+sop(b); //10
+
+Formula:-
+.............
+1)Bitwise ~ (negation) = (-1) * (value+1)
+
+2)Bitwise >> Right shift = value / no. of bit shifted
+
+3)Bitwise << Left shift = value x no. of bit shifted
+
+4)equivalent to divide by 2
+
+5)<< equivalent to multiply by 2
+
+ex1:-
+......
+
+int a = 64;
+sop(a >> 2); //64/4 because here size of byte is 32 byte
+ex2:-
+........
+
+int b = 32;
+sop(b >> 2); //8
+
+Note:
+If the no. of shift >= size of datatype then the actual no. of shifting = no. of shifting % size;
+
+ex1:-
+......
+int a = 64;
+sop(a >> 32); //32 % 32 = 0
+
+-> Input using Scanner class
+ex:-
+.....
+import java.util.*;
+class A {
+    psvm(String[] args) {
+        Scanner s = new Scanner(System.in);
+        sop("Enter 2 no");
+        int a = s.nextInt();
+        int b = s.nextInt();
+        sop(a + " + " + b + "=" + (a+b));
+    }
+}
+
+-> Conditional Statement :-
+...............................................
+->To provide condition we use conditional statement.
+Types of Conditional statement:-
+..............................
+->if
+->if-else
+->if-else-if
+->nested if
+
+ex:-
+........
+if (condition) {
+    //true
+} else {
+    //false
+}
+
+(Q)Check even or odd
+ex:
+import java.util.*;
+class A {
+    psvm(String[] args) {
+        Scanner s = new Scanner(System.in);
+        sop("Enter a no to check:");
+        int a = s.nextInt();
+        if (a % 2 == 0) {
+            sop("even no");
+        } else {
+            sop("odd no");
+        }
+    }
+}
+
+(Q) Check +ve or -ve
+ex:-
+......
+import java.util.*;
+class A {
+    psvm(String[] args) {
+        Scanner s = new Scanner(System.in);
+        sop("Enter a no to check:");
+        int a = s.nextInt();
+        if (a > 0) {
+            sop("+ve no");
+        } else {
+            sop("-ve no");
+        }
+    }
+}
+
+-> Switch Statement:-
+.......................
+Syntax:
+..............
+switch(expression) {
+    case value1:
+        // statements
+        break;
+    case value2:
+        // statements
+        break;
+    default:
+        // statements
+}
+
+Ex: ATM withdraw amount
+
+import java.util.*;
+class A {
+    psvm(String[] args) {
+        Scanner s = new Scanner(System.in);
+        sop("Enter amount:");
+        int amt = s.nextInt();
+        if (amt >= 2000) {
+            sop("2000 note count:" + (amt/2000));
+            amt = amt%2000;
+        }
+        if (amt >=500) {
+            sop("500 note count:" + (amt/500));
+            amt = amt%500;
+        }
+        if (amt >=200) {
+            sop("200 note count:" + (amt/200));
+            amt = amt%200;
+        }
+        if (amt >=100) {
+            sop("100 note count:" + (amt/100));
+            amt = amt%100;
+        }
+    }
+}
+
+Ex: Calculator using switch
+
+import java.util.*;
+class A {
+    psvm(String[] args) {
+        Scanner s = new Scanner(System.in);
+        sop("Enter 2 no:");
+        int a = s.nextInt();
+        int b = s.nextInt();
+        sop("Enter choice(1-5):");
+        int ch = s.nextInt();
+        switch(ch) {
+            case 1: sop("Add:" + (a+b)); break;
+            case 2: sop("Sub:" + (a-b)); break;
+            case 3: sop("Mul:" + (a*b)); break;
+            case 4: sop("Div:" + (a/b)); break;
+            case 5: sop("Mod:" + (a%b)); break;
+            default: sop("Invalid input");
+        }
+    }
+}
+
+-> Loop /Looping Statement:-
+...............................
+->We use looping statement because of iterating over the values.
+->Travershing the data structure.
+->Automatic repeted task.
+->Code compactness.
+->Flexibility control and enhanced for loop provides a consize a way to iterate over an arra and collection.
+
+Types of looping statement:-
+.............................
+1)for :-A for loop is a control flow loop which is ised for a repetedly to execute a block of code specific number of time.
+2)while :-It is an entry control loop.
+3)do-while
+
+ex: for loop
+..................
+for (int i=1; i<=10; i++) {
+    sop(i);
+}
+
+ex: while loop
+.................
+int i=1;
+while(i<=10) {
+    sop(i);
+    i++;
+}
+
+ex: do-while loop
+....................
+int i=1;
+do {
+    sop(i);
+    i++;
+} while(i<=10);
+
+-> Method :-
+..............
+Method is a block of statement which provide a reusable functionality.
+ex:-
+.......
+public static void m1() {
+    sop("m1() called");
+}
+
+-> Method Overloading :-
+.............................
+->When multiple methods having same name but different arguments, it is called method overloading.
+->One behaviour with different method is known as method overloading.
+->Method overloading can be done based on length of arguments ,Order of an argument and  type of an argument.
+->Method overloading take care by Compiler based on the method signature but not based on return types.
+
+
+ex:-
+............
+class A {
+    public void m1(int a) {
+        sop("int arg");
+    }
+    public void m1(double a) {
+        sop("double arg");
+    }
+    public void m1(String a) {
+        sop("String arg");
+    }
+}
+   Note:-
+...........
+->Non-public methods are called by JVM.
+->JVM call main method internally.
+
+-> Method Overriding:-
+.......................
+->When parent and child classes have same method signature, it is called overriding.
+->To provide newer imolimentaion inside the child class we use method overriding.
+->We use overrding with 2 class but we use overloading in one class.
+ex:-
+....
+class P {
+    void m1() {
+        sop("Parent m1()");
+    }
+}
+class C extends P {
+    void m1() {
+        sop("Child m1()");
+    }
+}
+
+->modifier :-
+...............
+->modifier defines the visibility of classes,members,variables inside the class, within the class and inside the package.
+->Modifiers are 2 types i.e. (1)Access Modifier
+                             (2)Non-access Modifier
+
+(1)Access Modifier:-
+........................
+->Access modifier is used to change the accesibility.In java we have 4 access modifies i.e. public,private,protected,default.
+
+i)Public:-
+...........
+->Public access modifies is used to make class,variable and datamebers are public which can access anywhere i.e. inside the class or outside the class or putside the package as well.
+ii)Private:-
+..............
+->This access modifier is used to make class ,variable and method private which can access only inside the class.
+iii)protected:-
+.................
+->protected access modifier is used to make class protect.It is accesed within class,outside the class and outside the package.
+iv)Default:-
+................
+->Default access modifier is used if a user not decalre any modifier then it is used and it is accesed by within the class and outside the class.
+
+2)Non-access Modifier:-
+...........................
+->Non access modifier is used for to add the functionality.
+->It is again 4 types i.e. static ,final, abstract, synchronized.
+
+i)static:-
+.................
+->Static modifier is used to to creating class , method and variables.
+ii)Final:-
+...........
+->Final modifier is used for finalizing the implementation of class,method and variables.
+iii)abstract :-
+................
+-.The abstract modifiers for creating abstract class and methods.
+iv)synchronized :-
+..................
+->The synchronized & volatile modifiers whcih are used in thread.
+
+->Variable argument:-
+........................
+->Variable argument is allows to pass arbitary number of argument to a method.
+->It represents in (...) the three dot.
+ ex:- public class VarArgs{
+    psvm(String[] args){
+        m1(2);
+        m1(3,4,5,7);
+        m1(1,3,4,6,8,9,132,14);
+
+    }
+    static void m1(int ...a){
+        System.out.println("m1()");
+
+    System.out.println(a);
+ }
+
+ ->Typecasting :-
+ ...................
+ ->Converting one type to another type is known as Typecasting.
+ ->It is 2 types.(1)Primitive Typecasting :-It is againg 2 type i.e. Widening and Narrowing
+                 (2)Non-Primitive Typecasting :-It is again 2 type i.e. Upcasting and Downcasting
+
+
+
+
+
+
+
+
+
+
+
+-> Constructor:-
+..................
+->Constructor is a set of statement executed at runtime and used to initialize an object.
+->Constructor name = class name.
+->Constructor can be developed with parameter or without.
+
+ex:-
+.....
+class Test {
+    Test() {
+        sop("0-arg constructor");
+    }
+    Test(int a) {
+        sop("Parameterized constructor");
+    }
+    psvm(String[] args) {
+        new Test();
+        new Test(10);
+    }
+}
+
+-> Constructor Chaining:-
+.............................
+->Calling one constructor from another constructor.
+
+ex:-
+....
+class A {
+    A() {
+        sop("0-arg constructor");
+    }
+    A(int i) {
+        this();
+        sop("Parameterized constructor");
+    }
+}
+
+Note: this() must be first statement in constructor.
+
+->Copy Constructor:-
+...........................
+->To copy all property value from given object to another object.
+
+ex:-
+......
+class A {
+    int i;
+    A(int i) {
+        this.i = i;
+    }
+    A(A a) {
+        i = a.i;
+    }
+}
+->Block:-
+............
+->
+
+➤ Static Block
+Block inside the class loaded at the time of class loading.
+
+java
+Copy
+Edit
+class A {
+    static {
+        sop("static block");
+    }
+    psvm(String[] args) {
+        sop("main method");
+    }
+}
+Output:
+
+scss
+Copy
+Edit
+static block
+main method
+ex:
+
+java
+Copy
+Edit
+class A {
+    static int i = 10;
+    static {
+        sop("Static block executed");
+        sop(i);
+    }
+}
+➤ Non-static Block
+Block inside the class loaded each time when object created.
+
+ex:
+
+java
+Copy
+Edit
+class A {
+    {
+        sop("non-static block");
+    }
+    psvm(String[] args) {
+        A a1 = new A();
+        A a2 = new A();
+    }
+}
+Output:
+
+scss
+Copy
+Edit
+non-static block
+non-static block
+➤ Inheritance
+When one class property and behavior is acquired to another class is called inheritance.
+
+Types:
+
+Single
+
+Multilevel
+
+Hierarchical
+
+ex:
+
+java
+Copy
+Edit
+class A {
+    int i=10;
+}
+class B extends A {
+    int j=20;
+    psvm(String[] args) {
+        B b = new B();
+        sop(b.i + b.j);
+    }
+}
+➤ Super keyword
+Super is used to refer parent class instance.
+
+ex:
+
+java
+Copy
+Edit
+class P {
+    int i=10;
+}
+class C extends P {
+    int i=20;
+    void show() {
+        sop(super.i);
+    }
+}
+Note: super() can be used to call parent constructor.
