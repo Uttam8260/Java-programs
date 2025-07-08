@@ -520,6 +520,16 @@ iv)synchronized :-
  ->It is 2 types.(1)Primitive Typecasting :-It is againg 2 type i.e. Widening and Narrowing
                  (2)Non-Primitive Typecasting :-It is again 2 type i.e. Upcasting and Downcasting
 
+ex:-
+....
+->class A{
+    public static void main(String[] args){
+      double d=50;
+      System.out.println(d);//50.0
+      int i=5.2;
+      System.out.println(i);//CTE
+      }
+  }
 
 ->Widening means converting smaller datatype to larger datatype.
 ->Narrowing means converting larger datatype to smaller datatype.
