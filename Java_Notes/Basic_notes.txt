@@ -520,6 +520,16 @@ iv)synchronized :-
  ->It is 2 types.(1)Primitive Typecasting :-It is againg 2 type i.e. Widening and Narrowing
                  (2)Non-Primitive Typecasting :-It is again 2 type i.e. Upcasting and Downcasting
 
+ex:-
+....
+->class A{
+    public static void main(String[] args){
+      double d=50;
+      System.out.println(d);//50.0
+      int i=5.2;
+      System.out.println(i);//CTE
+      }
+  }
 
 ->Widening means converting smaller datatype to larger datatype.
 ->Narrowing means converting larger datatype to smaller datatype.
@@ -535,12 +545,104 @@ Downcasting:-
 ->It is also used to generalized the code.
 ->Without upcasting if we do downcasting then we get Class Cast Exception.
 
+NOTE:-
+.........
+Q)Why main() is static?
+Ans:-main() is public because main() is called by JRE without creating an object.Sense only static method is called withut creating an object so main() is static.
+
+Q)Why main() is public?
+Ans:-JRE is Calling a main() if main is not public then it will be available to JRE to call.
+
+Q)Why main is void?
+Ans:-Because it is a command Line argument(CLA).
+
+->Recursion :-
+...............
+->Recursion is the technique of making a function call itself.
+->This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+ex 1:-
+....
+class A{                                                        
+    psvm(String[] args){
+        public static void m1(int i){
+            System.out.println(i);
+            if(i >= 3){
+                return ;
+            }
+            m1(i+1);
+            System.out.println(i);
+        }
+    }
+}
+ex 2:-
+.........
+class B{
+    psvm(String[] args){
+        m1(1);
+    }    
+    public static void m1(int i){
+        System.out.println(i);
+            if(i >= 3){
+            return ;
+        }
+        m1(i+1);
+        System.out.println(i);
+        m1(i+1);
+        System.out.println(i);
+    }
+}
+
+1)JDK(Java development Kit):-
+.................................
+->JDk is a complete software package, which is used by developer to perform entire development activity.
+->JDK contains Compiler, JRE tool, debugging tool,Jar tool and few other tools.
+
+2)JRE(Java Runtime Environment):-
+.................................
+->JRE is one of the component of JDK.
+->It provides a runtime environment to execute byte code.
+->it contains JVM implimentation and starndard runtime library.
+
+3)JVM(Java Virtual Machine):-
+................................
+->JVM implimentation is one of the component of JRE.It is used to execute bytecode.
+->JVM implimentation contains class loader ,garbage collector,JIT tools, thread schedular etc.
+->For each java application executed an instance of JVM is created in RAM.
 
 
+->Class Loader:-
+.................
+->The process of locating a class file and copying to JVM is known as class loader.
+->At runtime a class is loaded to JVM when it is used for the first time.
+->For static variable memory is alocated at the name class loading once.
+->For non-static variable memory is allocated each time when object is created different times based on instance.
+->Non-static member referred directly from the non-static method current class.
+->Non-static member cann't be referred directly from the static members.
 
+->Abundun Object:-
+....................
+->An object without referance is called abundun object.
+->Abundun object are eligible to remove.
+->Nexttime when garbage collector invoked all abundun objects are removed from memory or JVM.
 
+->Class & Object:-
+...................
+->Class is a blueprint of an object.
+->In object oriented programming any realworld entity is called object.
+->A real world object is called at JVM.
+->A java object has variable and ,method.
+->To create an object at runtime a design is required.
+->Class acts as a design for an object.
+->An object is an instance of class.
 
+->this keyword :-
+...................
+->this is a keyword is used to refer the current instance or current class object.
+->this keyword is used referance of non-static member of current class & current object.
+->this keyword is used inside the non-static method and construct them.
+->It cann't be used inside a static method.
 
+Note:- this() must be first statement in constructor.
 
 -> Constructor:-
 ..................
@@ -579,10 +681,8 @@ class A {
     }
 }
 
-Note: this() must be first statement in constructor.
-
 ->Copy Constructor:-
-...........................
+....................
 ->To copy all property value from given object to another object.
 
 ex:-
@@ -596,16 +696,38 @@ class A {
         i = a.i;
     }
 }
+
 ->Block:-
 ............
-->
+->In java Blocks is used to initialize the data members.Blocks are also called as multiline initializer.
+->Their have 2 types of block i.e. i)Static ii)Non-Static
 
-➤ Static Block
-Block inside the class loaded at the time of class loading.
+i)Static Block:-
+...................
+->Static block are going to decalre inside the class block and outside the class block.
+->Static block are also called as static keyword.
+->Static block are also used for static datamebers.
+->We can't initialize non-static datamebers inside the static block.
+->Static block will get executed during class loading time.
+->Static block doesn't contain any name.
+->In a class we can declare n number of static block.
+->Each static block are executed top to bottom order.
 
-java
-Copy
-Edit
+ex:-
+.....
+class Demo{
+
+    static{
+        sop("static block");
+    }
+
+    psvm(String[] args){
+        sop("main method");
+    }
+}
+
+ex:-
+......
 class A {
     static {
         sop("static block");
@@ -614,33 +736,27 @@ class A {
         sop("main method");
     }
 }
-Output:
 
-scss
-Copy
-Edit
+Output:
+.........
 static block
 main method
+
+ii)Non-static Block:- 
+.......................
+syntax:-  { 
+            //statement
+        }
+->Non-static block are going to decalre inside the class block and outside the method block.
+->Non-static block are also called as Non-static multiline initializer.
+->Non-static block are also used for Non-static and static datamebers.
+->We can initialize non-static datamebers inside the Non-static block.
+->Non-static block will get executed during class loading time.
+->In a class we can declare n number of Non-static block.
+->Each Non-static block are executed top to bottom order.
+
 ex:
-
-java
-Copy
-Edit
-class A {
-    static int i = 10;
-    static {
-        sop("Static block executed");
-        sop(i);
-    }
-}
-➤ Non-static Block
-Block inside the class loaded each time when object created.
-
-ex:
-
-java
-Copy
-Edit
+....
 class A {
     {
         sop("non-static block");
@@ -651,28 +767,58 @@ class A {
     }
 }
 Output:
-
-scss
-Copy
-Edit
+........
 non-static block
 non-static block
-➤ Inheritance
-When one class property and behavior is acquired to another class is called inheritance.
 
-Types:
+NOTE:=4 piller of OOPs
+1)Inheritance
+2)Polymorphism
+3)Abstaraction
+4)Encapsulation
 
-Single
+->Inheritance:-
+.................
+->Acquiring properties from one class to another class is known as inheritance.
+->Inheritance is also known as IS-A relationship.
+->IS-A relationship just like Parent Child relationship.
+->We can achieve Is-A relation by using extend keyword.
 
-Multilevel
+Example:-
+..........
+class A{
+    public static void m1(){
+        //code
+    }
+}
+class B extends A{
+    public static void m2(){
+        //code
+    }
+}
+->Parent Class:-Which class inherited this is parent class.
+..............
+->Child Class:- Which class is acquiring properties from the parent class to child class.
+..............
 
-Hierarchical
+Types of Inheritance:-
+........................
+1)Single Inheritance :-In this single inheritance one parent having one child.
+                        ex:- Parent------------------>Child
+
+2)Multilevel Inheritance :-In this inheritance more than one label is known as Multilevel inheritance.
+->In multillevel inheritance one parent act like like parent  and child at a same time.
+                        ex:- GrandParent--------->Parent--------->Child
+
+3)Hierarchical Inheritance :-One parent class having multiple child.
+                        ex:- parent---:child1,child2,child3
+
+4)Hybrid Inheritance :-Combination of multiple and hierachical inheritance.
+
+5)multiple Inheritance :-In this inheritance multiple parent having one child which is not support in java also.
 
 ex:
-
-java
-Copy
-Edit
+...
 class A {
     int i=10;
 }
@@ -683,14 +829,18 @@ class B extends A {
         sop(b.i + b.j);
     }
 }
-➤ Super keyword
-Super is used to refer parent class instance.
+
+->Super keyword:-
+.................
+->Super is a keyword used to in inheritance.
+->Super keyword is used to refer super class properties in subclass.
+->We cann't use super keyword inside a static context.
+->In java object class is super most class in java.
+->It is a default parent class for every class in java.
+->By using super keyword we can refer super class function,attribute and constructor also.
 
 ex:
-
-java
-Copy
-Edit
+....
 class P {
     int i=10;
 }
@@ -700,4 +850,5 @@ class C extends P {
         sop(super.i);
     }
 }
-Note: super() can be used to call parent constructor.
+
+NOTE:- super() can be used to call parent constructor.
