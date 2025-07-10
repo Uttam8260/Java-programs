@@ -839,7 +839,6 @@ class B extends A {
 ->It is a default parent class for every class in java.
 ->By using super keyword we can refer super class function,attribute and constructor also.
 
-
 ex:
 ....
 class P {
@@ -851,5 +850,4 @@ class C extends P {
         sop(super.i);
     }
 }
-
 NOTE:- super() can be used to call parent constructor.
